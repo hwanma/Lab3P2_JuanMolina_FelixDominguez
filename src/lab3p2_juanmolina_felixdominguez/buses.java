@@ -9,13 +9,6 @@ package lab3p2_juanmolina_felixdominguez;
  *
  * @author Hwan
  */
-public class Lab3P2_JuanMolina_FelixDominguez {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class buses {
     
 }
