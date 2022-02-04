@@ -5,29 +5,32 @@
  */
 package lab3p2_juanmolina_felixdominguez;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Hwan
  */
-public class taxis {
-    private int capacidad;
+public class taxis extends transportes{
+    private int asientos;
     private int numero;
-
-    public taxis(int capacidad, int numero) {
-        this.capacidad = capacidad;
-        this.numero = numero;
-    }
+    private ArrayList<alumnos> alumnos;
 
     public taxis() {
-        
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public taxis(int asientos, int numero, ArrayList<alumnos> alumnos) {
+        this.asientos = asientos;
+        this.numero = numero;
+        this.alumnos = alumnos;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public int getAsientos() {
+        return asientos;
+    }
+
+    public void setAsientos(int asientos) {
+        this.asientos = asientos;
     }
 
     public int getNumero() {
@@ -38,12 +41,19 @@ public class taxis {
         this.numero = numero;
     }
 
+    public ArrayList<alumnos> getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(ArrayList<alumnos> alumnos) {
+        this.alumnos = alumnos;
+    }
+
     @Override
     public String toString() {
-        return "taxis{" + "capacidad=" + capacidad + ", numero=" + numero + '}';
+        return "taxis{" + "asientos=" + asientos + ", numero=" + numero + ", alumnos=" + alumnos + '}';
     }
-    
-    
-    
+
+     
     
 }

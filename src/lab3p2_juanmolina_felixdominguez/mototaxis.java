@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Hwan
  */
-public class mototaxis {
+public class mototaxis extends transportes{
     
     private int asientos = 2;
     private ArrayList<alumnos> alumnos;

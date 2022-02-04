@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Hwan
  */
-public class buses {
+public class buses extends transportes{
     
     private int asientos;
     private int parados;

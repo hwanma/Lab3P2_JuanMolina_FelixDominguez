@@ -11,26 +11,24 @@ import java.util.ArrayList;
  *
  * @author Hwan
  */
-public class rapiditos {
-    private int sillas;
+public class rapiditos extends transportes{
+    private int asientos;
     private ArrayList<alumnos> alumnos;
-    private int capacidad;
 
     public rapiditos() {
     }
 
-    public rapiditos(int sillas, ArrayList<alumnos> alumnos, int capacidad) {
-        this.sillas = sillas;
+    public rapiditos(int asientos, ArrayList<alumnos> alumnos) {
+        this.asientos = asientos;
         this.alumnos = alumnos;
-        this.capacidad = capacidad;
     }
 
-    public int getSillas() {
-        return sillas;
+    public int getAsientos() {
+        return asientos;
     }
 
-    public void setSillas(int sillas) {
-        this.sillas = sillas;
+    public void setAsientos(int asientos) {
+        this.asientos = asientos;
     }
 
     public ArrayList<alumnos> getAlumnos() {
@@ -41,17 +39,9 @@ public class rapiditos {
         this.alumnos = alumnos;
     }
 
-    public int getCapacidad() {
-        return capacidad;
-    }
-
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
-    }
-
     @Override
     public String toString() {
-        return "rapiditos{" + "sillas=" + sillas + ", alumnos=" + alumnos + ", capacidad=" + capacidad + '}';
+        return "rapiditos{" + "asientos=" + asientos + ", alumnos=" + alumnos +'}';
     }
     
     
