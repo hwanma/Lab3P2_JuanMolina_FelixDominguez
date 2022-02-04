@@ -9,7 +9,7 @@ package lab3p2_juanmolina_felixdominguez;
  *
  * @author Hwan
  */
-public class transportista {
+public class transportista extends Personas{
     private int experiencia;
     private String apodo;
 
@@ -39,7 +39,7 @@ public class transportista {
 
     @Override
     public String toString() {
-        return "transportista{" + "experiencia=" + experiencia + ", apodo=" + apodo + '}';
+        return super.toString() + "experiencia=" + experiencia + ", apodo=" + apodo;
     }
     
     

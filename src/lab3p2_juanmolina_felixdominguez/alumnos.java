@@ -7,7 +7,7 @@ package lab3p2_juanmolina_felixdominguez;
 
 import java.util.ArrayList;
 
-public class alumnos {
+public class alumnos extends Personas{
     private int idEstudiante;
     private ArrayList<clases> clases;
 
@@ -41,7 +41,7 @@ public class alumnos {
 
     @Override
     public String toString() {
-        return "alumnos{" + "idEstudiante=" + idEstudiante + ", clases=" + clases + '}';
+        return super.toString() + "idEstudiante=" + idEstudiante + ", clases=" + clases;
     }
     
 }
