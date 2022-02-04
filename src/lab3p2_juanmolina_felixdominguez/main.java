@@ -10,21 +10,86 @@ import java.util.Scanner;
 
 public class main {
     
+    public static ArrayList<alumnos> alumnos;
+    public static ArrayList<clases> clases;
+    public static ArrayList<transportes> transportes;
+    public static ArrayList<transportista> transportista;
+    public static ArrayList<estaciones> estaciones;
+    
     public static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
-        // TODO code application logic here
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     public static int menu(){
         System.out.println("");
-        System.out.println("*****REGISTRO DE ANIMALES*****");
+        System.out.println("*****SISTEMA DE TRANSPORTES*****");
+        System.out.println("************DISCOVERY***********");
         System.out.println("0. Salir");
-        System.out.println("1. Agregar Animal\n" +
-                            "2. Editar Animal\n" +
-                            "3. Imprimir Animal\n" +
-                            "4. Alimentacion\n" +
-                            "5. Eliminar Animal\n" +
+        System.out.println("1. Crear Clase\n" +
+                            "2. Crear Ruta\n" +
+                            "3. Crear Alumno\n" +
+                            "4. Agregar Clase a Alumno\n" +
+                            "5. Crear Transportiste\n" +
+                            "6. Crear Transporte\n" +
+                            "7. Simulacion\n" +
+                            "8. Listar Clases\n" +
+                            "9. Listar Rutas\n" +
+                            "10. Listar Alumnos\n" +
+                            "11. Listar Transportistas\n" +
+                            "12. Listar Transportes\n" +
+                            "Ingrese la opcion: ");
+        return sc.nextInt();
+    }
+    
+    public static int menuSimulacion(){
+        System.out.println("");
+        System.out.println("************SIMULACION**********");
+        System.out.println("0. Salir");
+        System.out.println("1. Subir alumno al transporte\n" +
+                            "2. Bajar alumno del transporte\n" +
+                            "3. Listar alumnos del transporte\n" +
+                            "4. Escoger transportista\n" +
+                            "5. Quitar transportista\n" +
+                            "6. Anadir ruta\n" +
+                            "7. Quitar ruta\n" +
+                            "8. Imprimir transporte\n" +
+                            "9. Comenzar\n" +
                             "Ingrese la opcion: ");
         return sc.nextInt();
     }

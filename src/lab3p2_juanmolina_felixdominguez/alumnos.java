@@ -5,22 +5,18 @@
  */
 package lab3p2_juanmolina_felixdominguez;
 
-/**
- *
- * @author Hwan
- */
+import java.util.ArrayList;
+
 public class alumnos {
     private int idEstudiante;
-    private String [] clase;
-    private int [] idCurso;
+    private ArrayList<clases> clases;
 
     public alumnos() {
     }
 
-    public alumnos(int idEstudiante, String[] clase, int[] idCurso) {
+    public alumnos(int idEstudiante, ArrayList<clases> clases) {
         this.idEstudiante = idEstudiante;
-        this.clase = clase;
-        this.idCurso = idCurso;
+        this.clases = clases;
     }
 
     public int getIdEstudiante() {
@@ -31,27 +27,17 @@ public class alumnos {
         this.idEstudiante = idEstudiante;
     }
 
-    public String[] getClase() {
-        return clase;
+    public ArrayList<clases> getClases() {
+        return clases;
     }
 
-    public void setClase(String[] clase) {
-        this.clase = clase;
-    }
-
-    public int[] getIdCurso() {
-        return idCurso;
-    }
-
-    public void setIdCurso(int[] idCurso) {
-        this.idCurso = idCurso;
+    public void setClases(ArrayList<clases> clases) {
+        this.clases = clases;
     }
 
     @Override
     public String toString() {
-        return "alumnos{" + "idEstudiante=" + idEstudiante + ", clase=" + clase + ", idCurso=" + idCurso + '}';
+        return "alumnos{" + "idEstudiante=" + idEstudiante + ", clases=" + clases + '}';
     }
-
-    
     
 }
