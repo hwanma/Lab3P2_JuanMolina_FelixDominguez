@@ -6,43 +6,25 @@
 package lab3p2_juanmolina_felixdominguez;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 /**
  *
  * @author Hwan
  */
 public class buses {
-    private int placa;
-    private Color color;
+    
     private int asientos;
-    private transportista transportista;
-    private estaciones estaciones;
+    private int parados;
+    private ArrayList<alumnos> alumnos;
 
     public buses() {
     }
 
-    public buses(int placa, Color color, int asientos, transportista transportisa, estaciones estaciones) {
-        this.placa = placa;
-        this.color = color;
+    public buses(int asientos, int parados, ArrayList<alumnos> alumnos) {
         this.asientos = asientos;
-        this.transportista = transportisa;
-        this.estaciones = estaciones;
-    }
-
-    public int getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(int placa) {
-        this.placa = placa;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
+        this.parados = parados;
+        this.alumnos = alumnos;
     }
 
     public int getAsientos() {
@@ -53,21 +35,27 @@ public class buses {
         this.asientos = asientos;
     }
 
-    public transportista getTransportisa() {
-        return transportista;
+    public int getParados() {
+        return parados;
     }
 
-    public void setTransportisa(transportista transportisa) {
-        this.transportista = transportisa;
+    public void setParados(int parados) {
+        this.parados = parados;
     }
 
-    public estaciones getEstaciones() {
-        return estaciones;
+    public ArrayList<alumnos> getAlumnos() {
+        return alumnos;
     }
 
-    public void setEstaciones(estaciones estaciones) {
-        this.estaciones = estaciones;
+    public void setAlumnos(ArrayList<alumnos> alumnos) {
+        this.alumnos = alumnos;
     }
+
+    @Override
+    public String toString() {
+        return "buses{" + "asientos=" + asientos + ", parados=" + parados + ", alumnos=" + alumnos + '}';
+    }
+
     
     
 }

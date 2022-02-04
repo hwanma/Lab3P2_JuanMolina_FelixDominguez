@@ -47,5 +47,11 @@ public class alumnos {
         this.idCurso = idCurso;
     }
 
+    @Override
+    public String toString() {
+        return "alumnos{" + "idEstudiante=" + idEstudiante + ", clase=" + clase + ", idCurso=" + idCurso + '}';
+    }
+
+    
     
 }

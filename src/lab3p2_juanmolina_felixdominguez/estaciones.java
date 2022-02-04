@@ -46,6 +46,12 @@ public class estaciones {
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "estaciones{" + "nombre=" + nombre + ", x=" + x + ", y=" + y + '}';
+    }
+    
     
     
 }
