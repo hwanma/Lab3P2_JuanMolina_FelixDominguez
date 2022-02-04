@@ -18,6 +18,10 @@ public class alumnos {
         this.idEstudiante = idEstudiante;
         this.clases = clases;
     }
+    
+    public alumnos(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
 
     public int getIdEstudiante() {
         return idEstudiante;

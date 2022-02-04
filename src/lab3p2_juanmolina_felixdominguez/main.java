@@ -19,6 +19,7 @@ public class main {
     public static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
+        metodos m = new metodos();
         clases.add(new clases("Ciencias",1234));
         clases.add(new clases("Matematicas",1243));
         alumnos.add(new alumnos(4356,((clases)clases.get(0))));
@@ -29,43 +30,476 @@ public class main {
         transportista.add(new transportista(15,"Jorge"));
         estaciones.add(new estaciones("San Juan",4,3));
         estaciones.add(new estaciones("San Martin",1,2));
+    
+        
+        char resp = 's';
+        while (resp == 's' || resp == 'S') {
+            switch(m.menu()){
+                case 0:{
+                    System.out.println("Gracias por utilizar este programa!");
+                    resp = 'n';
+                    break;
+                }
+                
+                case 1:{
+                    System.out.println("Nombre de la Clase: ");
+                    sc.nextLine();
+                    String nombre = sc.next();
+                    System.out.println("Codigo de clase: ");
+                    sc.nextLine();
+                    int codigo = sc.nextInt();
+                    while(clases.contains(codigo)){
+                        System.out.println("Codigo de clase debe ser unico: ");
+                        sc.nextLine();
+                        codigo = sc.nextInt();
+                    }
+                    clases.add(new clases(nombre,codigo));
+                    
+                    break;
+                }
+                
+                case 2:{
+                    System.out.println("Nombre de la Estacion: ");
+                    sc.nextLine();
+                    String nombre = sc.next();
+                    System.out.println("Coordenada X: ");
+                    sc.nextLine();
+                    int x = sc.nextInt();
+                    System.out.println("Coordenada Y: ");
+                    sc.nextLine();
+                    int y = sc.nextInt();
+                    while(estaciones.contains(x) && estaciones.contains(y)){
+                        System.out.println("Coordenada X: ");
+                        sc.nextLine();
+                        x = sc.nextInt();
+                        System.out.println("Coordenada Y: ");
+                        sc.nextLine();
+                        y = sc.nextInt();
+                    }
+                    estaciones.add(new estaciones(nombre,x,y));
+                    break;
+                }
+                
+                case 3:{
+                    System.out.println("Id del estudiante (4 digitos): ");
+                    sc.nextLine();
+                    int idEstudiante = sc.nextInt();
+                    while(alumnos.contains(idEstudiante) || String.valueOf(idEstudiante).length()!=4){
+                        System.out.println("Id del estudiante (4 digitos): ");
+                        sc.nextLine();
+                        idEstudiante = sc.nextInt();
+                    }
+                    
+                    alumnos.add(new alumnos(idEstudiante));
+                    break;
+                }
+                
+                case 4:{
+                    System.out.println("Clases Disponibles: ");
+                    String acum = "";
+                    
+                    for(Object temp : clases){
+                        if(temp instanceof clases){
+                            acum += ""+clases.indexOf(temp)+" - "+temp+"\n";
+                        }
+                    }
+                    System.out.println(acum);
+                    
+                    break;
+                }
+                
+                default:{
+                    System.out.println("!!");
+                    System.out.println("Error, por favor introduzca un valor del menu.");
+                    System.out.println("!!");
+                    System.out.println(" ");
+                    break;
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
-    public static int menu(){
-        System.out.println("");
-        System.out.println("*****SISTEMA DE TRANSPORTES*****");
-        System.out.println("************DISCOVERY***********");
-        System.out.println("0. Salir");
-        System.out.println("1. Crear Clase\n" +
-                            "2. Crear Ruta\n" +
-                            "3. Crear Alumno\n" +
-                            "4. Agregar Clase a Alumno\n" +
-                            "5. Crear Transportiste\n" +
-                            "6. Crear Transporte\n" +
-                            "7. Simulacion\n" +
-                            "8. Listar Clases\n" +
-                            "9. Listar Rutas\n" +
-                            "10. Listar Alumnos\n" +
-                            "11. Listar Transportistas\n" +
-                            "12. Listar Transportes\n" +
-                            "Ingrese la opcion: ");
-        return sc.nextInt();
-    }
     
-    public static int menuSimulacion(){
-        System.out.println("");
-        System.out.println("************SIMULACION**********");
-        System.out.println("0. Salir");
-        System.out.println("1. Subir alumno al transporte\n" +
-                            "2. Bajar alumno del transporte\n" +
-                            "3. Listar alumnos del transporte\n" +
-                            "4. Escoger transportista\n" +
-                            "5. Quitar transportista\n" +
-                            "6. Anadir ruta\n" +
-                            "7. Quitar ruta\n" +
-                            "8. Imprimir transporte\n" +
-                            "9. Comenzar\n" +
-                            "Ingrese la opcion: ");
-        return sc.nextInt();
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
