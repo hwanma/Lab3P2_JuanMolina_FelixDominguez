@@ -10,5 +10,37 @@ package lab3p2_juanmolina_felixdominguez;
  * @author Hwan
  */
 public class transportista {
+    private int experiencia;
+    private String apodo;
+
+    public transportista() {
+    }
+
+    public transportista(int experiencia, String apodo) {
+        this.experiencia = experiencia;
+        this.apodo = apodo;
+    }
+
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
+
+    public String getApodo() {
+        return apodo;
+    }
+
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
+    }
+
+    @Override
+    public String toString() {
+        return "transportista{" + "experiencia=" + experiencia + ", apodo=" + apodo + '}';
+    }
+    
     
 }
