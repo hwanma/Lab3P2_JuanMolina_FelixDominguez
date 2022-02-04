@@ -10,5 +10,6 @@ package lab3p2_juanmolina_felixdominguez;
  * @author Hwan
  */
 public class rutas {
+     
     
 }
