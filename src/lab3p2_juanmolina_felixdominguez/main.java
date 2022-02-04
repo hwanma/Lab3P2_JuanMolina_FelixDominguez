@@ -19,41 +19,16 @@ public class main {
     public static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) {
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        clases.add(new clases("Ciencias",1234));
+        clases.add(new clases("Matematicas",1243));
+        alumnos.add(new alumnos(4356,((clases)clases.get(0))));
+        alumnos.add(new alumnos(7834,((clases)clases.get(1))));
+        transportes.add(new buses(50,20,alumnos));
+        transportes.add(new buses(70,25,alumnos));
+        transportista.add(new transportista(10,"Maria"));
+        transportista.add(new transportista(15,"Jorge"));
+        estaciones.add(new estaciones("San Juan",4,3));
+        estaciones.add(new estaciones("San Martin",1,2));
     }
     
     public static int menu(){
