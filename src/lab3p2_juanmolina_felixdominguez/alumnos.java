@@ -6,6 +6,7 @@
 package lab3p2_juanmolina_felixdominguez;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class alumnos extends Personas{
     private int idEstudiante;
@@ -16,6 +17,15 @@ public class alumnos extends Personas{
 
     public alumnos(int idEstudiante, ArrayList<clases> clases) {
         this.idEstudiante = idEstudiante;
+        this.clases = clases;
+    }
+    
+    public alumnos(int idEstudiante, String nombre, int identidad, Date nacimiento) {
+        super(nombre,identidad,nacimiento);
+        this.idEstudiante = idEstudiante;
+    }
+    
+    public alumnos(ArrayList<clases> clases) {
         this.clases = clases;
     }
     

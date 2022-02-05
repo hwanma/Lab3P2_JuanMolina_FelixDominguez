@@ -5,6 +5,8 @@
  */
 package lab3p2_juanmolina_felixdominguez;
 
+import java.util.Date;
+
 /**
  *
  * @author Hwan
@@ -17,6 +19,12 @@ public class transportista extends Personas{
     }
 
     public transportista(int experiencia, String apodo) {
+        this.experiencia = experiencia;
+        this.apodo = apodo;
+    }
+    
+    public transportista(int experiencia, String apodo, String nombre, int identidad, Date nacimiento) {
+        super(nombre,identidad,nacimiento);
         this.experiencia = experiencia;
         this.apodo = apodo;
     }

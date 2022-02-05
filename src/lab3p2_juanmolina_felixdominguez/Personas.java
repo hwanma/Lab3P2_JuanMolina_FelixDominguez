@@ -24,6 +24,7 @@ public class Personas {
         this.identidad = identidad;
         this.nacimiento = nacimiento;
     }
+    
 
     public String getNombre() {
         return nombre;

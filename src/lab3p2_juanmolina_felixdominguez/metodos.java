@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lab3p2_juanmolina_felixdominguez;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class metodos {
@@ -46,5 +47,57 @@ public class metodos {
                             "9. Comenzar\n" +
                             "Ingrese la opcion: ");
         return sc.nextInt();
+    }
+    
+    public int menuTransporte(){
+        System.out.println("1. Bus\n" +
+                            "2. Taxi\n" +
+                            "3. MotoTaxi\n" +
+                            "4. Rapidito\n" +
+                            "Ingrese la opcion: ");
+        return sc.nextInt();
+    }
+        
+    
+    public boolean valid(int x, ArrayList<Personas> y){
+        boolean estado = false;
+        
+        for(int i=0;i<y.size();i++){
+            if(x==((alumnos)y.get(i)).getIdEstudiante()){
+                System.out.println("Este id ya existe!");
+                estado = true;
+                break;
+            }
+        }
+        
+        return estado;
+    }
+    
+    public boolean valid2(int x, ArrayList<clases> y){
+        boolean estado = false;
+        
+        for(int i=0;i<y.size();i++){
+            if(x==((clases)y.get(i)).getCodigo()){
+                System.out.println("Este id ya existe!");
+                estado = true;
+                break;
+            }
+        }
+        
+        return estado;
+    }
+    
+    public boolean valid3(int x, ArrayList<Personas> y){
+        boolean estado = false;
+        
+        for(int i=0;i<y.size();i++){
+            if(x==((Personas)y.get(i)).getIdentidad()){
+                System.out.println("Este id ya existe!");
+                estado = true;
+                break;
+            }
+        }
+        
+        return estado;
     }
 }

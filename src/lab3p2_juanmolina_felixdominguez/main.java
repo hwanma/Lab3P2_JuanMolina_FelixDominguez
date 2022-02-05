@@ -5,31 +5,33 @@
  */
 package lab3p2_juanmolina_felixdominguez;
 
+import java.awt.Color;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class main {
     
-    public static ArrayList<alumnos> alumnos;
-    public static ArrayList<clases> clases;
-    public static ArrayList<transportes> transportes;
-    public static ArrayList<transportista> transportista;
-    public static ArrayList<estaciones> estaciones;
+    public static ArrayList<Personas> persona = new ArrayList<>();
+    public static ArrayList<clases> clase = new ArrayList<>();
+    public static ArrayList<transportes> transporte = new ArrayList<>();
+    public static ArrayList<estaciones> estacione = new ArrayList<>();
     
     public static Scanner sc = new Scanner(System.in);
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         metodos m = new metodos();
-        clases.add(new clases("Ciencias",1234));
-        clases.add(new clases("Matematicas",1243));
-        alumnos.add(new alumnos(4356,((clases)clases.get(0))));
-        alumnos.add(new alumnos(7834,((clases)clases.get(1))));
-        transportes.add(new buses(50,20,alumnos));
-        transportes.add(new buses(70,25,alumnos));
-        transportista.add(new transportista(10,"Maria"));
-        transportista.add(new transportista(15,"Jorge"));
-        estaciones.add(new estaciones("San Juan",4,3));
-        estaciones.add(new estaciones("San Martin",1,2));
+        clase.add(new clases("Ciencias",1234));
+        clase.add(new clases("Matematicas",1243));
+        persona.add(new alumnos(4356));
+        persona.add(new alumnos(7834));
+        persona.add(new transportista(10,"Maria"));
+        persona.add(new transportista(15,"Jorge"));
+        estacione.add(new estaciones("San Juan",4,3));
+        estacione.add(new estaciones("San Martin",1,2));
     
         
         char resp = 's';
@@ -43,54 +45,57 @@ public class main {
                 
                 case 1:{
                     System.out.println("Nombre de la Clase: ");
-                    sc.nextLine();
                     String nombre = sc.next();
                     System.out.println("Codigo de clase: ");
-                    sc.nextLine();
                     int codigo = sc.nextInt();
-                    while(clases.contains(codigo)){
-                        System.out.println("Codigo de clase debe ser unico: ");
-                        sc.nextLine();
+                    while(m.valid2(codigo, clase)){
+                        System.out.println("Id de la clase (4 digitos): ");
                         codigo = sc.nextInt();
                     }
-                    clases.add(new clases(nombre,codigo));
+                    
+                    clase.add(new clases(nombre,codigo));
                     
                     break;
                 }
                 
                 case 2:{
                     System.out.println("Nombre de la Estacion: ");
-                    sc.nextLine();
                     String nombre = sc.next();
                     System.out.println("Coordenada X: ");
-                    sc.nextLine();
                     int x = sc.nextInt();
                     System.out.println("Coordenada Y: ");
-                    sc.nextLine();
                     int y = sc.nextInt();
-                    while(estaciones.contains(x) && estaciones.contains(y)){
-                        System.out.println("Coordenada X: ");
-                        sc.nextLine();
-                        x = sc.nextInt();
-                        System.out.println("Coordenada Y: ");
-                        sc.nextLine();
-                        y = sc.nextInt();
-                    }
-                    estaciones.add(new estaciones(nombre,x,y));
+                    
+                    estacione.add(new estaciones(nombre,x,y));
                     break;
                 }
                 
                 case 3:{
                     System.out.println("Id del estudiante (4 digitos): ");
-                    sc.nextLine();
-                    int idEstudiante = sc.nextInt();
-                    while(alumnos.contains(idEstudiante) || String.valueOf(idEstudiante).length()!=4){
+                    int codigo = sc.nextInt();
+                    
+                    while(m.valid(codigo, persona)){
                         System.out.println("Id del estudiante (4 digitos): ");
-                        sc.nextLine();
-                        idEstudiante = sc.nextInt();
+                        codigo = sc.nextInt();
                     }
                     
-                    alumnos.add(new alumnos(idEstudiante));
+                    System.out.println("Nombre: ");
+                    String nombre = sc.nextLine();
+                    
+                    System.out.println("Identidad: ");
+                    int identidad = sc.nextInt();
+                    while(m.valid3(identidad, persona)){
+                        System.out.println("Identidad ya existe: ");
+                        identidad = sc.nextInt();
+                    }
+                    
+                    
+                    System.out.println("Fecha de nacimiento (yyyy/MM/dd): ");
+                    Date fecha;
+                    DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                    fecha = df.parse(sc.next());
+                    
+                    persona.add(new alumnos(codigo,nombre,identidad,fecha));
                     break;
                 }
                 
@@ -98,14 +103,88 @@ public class main {
                     System.out.println("Clases Disponibles: ");
                     String acum = "";
                     
-                    for(Object temp : clases){
+                    for(Object temp : clase){
                         if(temp instanceof clases){
-                            acum += ""+clases.indexOf(temp)+" - "+temp+"\n";
+                            acum += ""+clase.indexOf(temp)+" - "+temp+"\n";
                         }
                     }
                     System.out.println(acum);
                     
+                    System.out.println("Seleccione la clase: ");
+                    int opcionClase = sc.nextInt();
+                    
+                    System.out.println("Estudiantes: ");
+                    acum = "";
+                    for(Object temp : persona){
+                        if(temp instanceof alumnos){
+                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                        }
+                    }
+                    System.out.println(acum);
+                    
+                    System.out.println("Seleccione al Alumno: ");
+                    int opcionAlumno = sc.nextInt();
+                    
+                    ArrayList<clases> temp =new ArrayList<>();
+                    temp.add(clase.get(opcionClase));
+                    ((alumnos)persona.get(opcionAlumno)).setClases(temp);
+                    
                     break;
+                }
+                
+                case 5:{
+                    
+                    System.out.println("Nombre: ");
+                    String nombre = sc.nextLine();
+                    
+                    System.out.println("Identidad: ");
+                    int identidad = sc.nextInt();
+                    while(m.valid3(identidad, persona)){
+                        System.out.println("Identidad ya existe: ");
+                        identidad = sc.nextInt();
+                    }
+                    
+                    System.out.println("Fecha de nacimiento (yyyy/MM/dd): ");
+                    Date fecha;
+                    DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                    fecha = df.parse(sc.next());
+                    
+                    System.out.println("Apodo: ");
+                    String apodo = sc.nextLine();
+                    
+                    System.out.println("Tiempo de Experiencia: ");
+                    int exp = sc.nextInt();
+                    
+                    persona.add(new transportista(exp,apodo,nombre,identidad,fecha));
+                    break;
+                }
+                
+                case 6:{
+                    System.out.println("TRANSPORTES");
+                    System.out.println("Placa: ");
+                    int placa = sc.nextInt();
+                    System.out.println("Color: ");
+                    Color color = Color.BLACK;
+                    System.out.println("Transportistas disponibles: ");
+                    
+                    String acum = "";
+                    for(Object temp : persona){
+                        if(temp instanceof transportista){
+                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    
+                    if(m.menuTransporte()==1){
+                        
+                    } else if (m.menuTransporte()==2){
+                        
+                    } else if (m.menuTransporte()==3){
+                        
+                    } else {
+                        
+                    }
+                        
                 }
                 
                 default:{
