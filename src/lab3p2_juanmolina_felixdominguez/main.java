@@ -174,15 +174,21 @@ public class main {
                         }
                         
                     }
-                    
                     if(m.menuTransporte()==1){
-                        
+                        System.out.println("Ingrese los asientos");
+                        int asientos=sc.nextInt();
+                        System.out.println("Ingrese los lugares donde pararse");
+                        int parar=sc.nextInt();
+                        transporte.add(new buses())
                     } else if (m.menuTransporte()==2){
-                        
+                        System.out.println("Ingrese los asientos");
+                        int asientos=sc.nextInt();
                     } else if (m.menuTransporte()==3){
-                        
+                        int asientos=4;
+                        System.out.println("Ingrese el numero del taxi");
+                        int numero=sc.nextInt();
                     } else {
-                        
+                        int asientos=2;
                     }
                         
                 }

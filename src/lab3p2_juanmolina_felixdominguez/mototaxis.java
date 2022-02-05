@@ -20,8 +20,10 @@ public class mototaxis extends transportes{
     public mototaxis() {
     }
 
-    public mototaxis(ArrayList<alumnos> alumnos) {
+    public mototaxis(ArrayList<alumnos> alumnos,int asientos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones){
+        super(placa,color,transportista,estaciones);
         this.alumnos = alumnos;
+        this.asientos=asientos;
     }
 
     public int getAsientos() {

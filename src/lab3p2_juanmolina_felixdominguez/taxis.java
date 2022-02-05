@@ -5,6 +5,7 @@
  */
 package lab3p2_juanmolina_felixdominguez;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +20,8 @@ public class taxis extends transportes{
     public taxis() {
     }
 
-    public taxis(int asientos, int numero, ArrayList<alumnos> alumnos) {
+    public taxis(int asientos, int numero, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones) {
+        super(placa,color,transportista,estaciones);
         this.asientos = asientos;
         this.numero = numero;
         this.alumnos = alumnos;

@@ -21,7 +21,8 @@ public class buses extends transportes{
     public buses() {
     }
 
-    public buses(int asientos, int parados, ArrayList<alumnos> alumnos) {
+    public buses(int asientos, int parados, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones) {
+        super(placa,color,transportista,estaciones);
         this.asientos = asientos;
         this.parados = parados;
         this.alumnos = alumnos;
