@@ -13,6 +13,7 @@ public class transportes {
     private Color color;
     private transportista transportista;
     private ArrayList<estaciones> estaciones;
+    private ArrayList<alumnos> alumnos;
 
     public transportes() {
     }
@@ -23,6 +24,24 @@ public class transportes {
         this.transportista = transportista;
         this.estaciones = estaciones;
     }
+
+    public transportes(int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones, ArrayList<alumnos> alumnos) {
+        this.placa = placa;
+        this.color = color;
+        this.transportista = transportista;
+        this.estaciones = estaciones;
+        this.alumnos = alumnos;
+    }
+
+    public ArrayList<alumnos> getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(ArrayList<alumnos> alumnos) {
+        this.alumnos = alumnos;
+    }
+    
+    
 
     public int getPlaca() {
         return placa;
