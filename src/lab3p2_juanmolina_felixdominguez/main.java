@@ -177,20 +177,19 @@ public class main {
                     System.out.println(acum);
                     System.out.println("Ingrese el numero del transportista que desea: ");
                     int index=sc.nextInt();
-                    m.menuTransporte();
-                    if(m.menuTransporte()==1){
+                    int opcion = m.menuTransporte();
+                    if(opcion==1){
                         System.out.println("Ingrese los asientos");
                         int asientos=sc.nextInt();
                         System.out.println("Ingrese los lugares donde pararse");
                         int parar=sc.nextInt();
                         transporte.add(new buses(asientos,parar,placa,color,(persona.get(index))));
-                    } else if (m.menuTransporte()==2){
+                    } else if (opcion==2){
                         int asientos=4;
                         System.out.println("Ingrese el numero del taxi");
                         int numero=sc.nextInt();
                         transporte.add(new taxis(asientos,numero,placa,color,(persona.get(index))));
-                        
-                    } else if (m.menuTransporte()==3){
+                    } else if (opcion==3){
                         int asientos=2;
                         transporte.add(new mototaxis(asientos,placa,color,(persona.get(index))));
                     } else {
