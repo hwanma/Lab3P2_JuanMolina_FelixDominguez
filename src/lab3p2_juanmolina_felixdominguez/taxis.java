@@ -19,6 +19,19 @@ public class taxis extends transportes{
 
     public taxis() {
     }
+    
+    public taxis(int asientos, int numero, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista) {
+        super(placa,color,transportista);
+        this.asientos = asientos;
+        this.numero = numero;
+        this.alumnos = alumnos;
+    }
+    
+    public taxis(int asientos, int numero, int placa, Color color, transportista transportista) {
+        super(placa,color,transportista);
+        this.asientos = asientos;
+        this.numero = numero;
+    }
 
     public taxis(int asientos, int numero, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones) {
         super(placa,color,transportista,estaciones);

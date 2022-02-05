@@ -27,6 +27,13 @@ public class buses extends transportes{
         this.parados = parados;
         this.alumnos = alumnos;
     }
+    
+    public buses(int asientos, int parados, int placa, Color color, transportista transportista) {
+        super(placa,color,transportista);
+        this.asientos = asientos;
+        this.parados = parados;
+        this.alumnos = alumnos;
+    }
 
     public int getAsientos() {
         return asientos;

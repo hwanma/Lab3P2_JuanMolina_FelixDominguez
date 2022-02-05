@@ -17,6 +17,12 @@ public class transportes {
 
     public transportes() {
     }
+    
+    public transportes(int placa, Color color, transportista transportista) {
+        this.placa = placa;
+        this.color = color;
+        this.transportista = transportista;
+    }
 
     public transportes(int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones) {
         this.placa = placa;

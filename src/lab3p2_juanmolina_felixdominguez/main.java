@@ -174,21 +174,29 @@ public class main {
                         }
                         
                     }
+                    System.out.println(acum);
+                    System.out.println("Ingrese el numero del transportista que desea: ");
+                    int index=sc.nextInt();
+                    m.menuTransporte();
                     if(m.menuTransporte()==1){
                         System.out.println("Ingrese los asientos");
                         int asientos=sc.nextInt();
                         System.out.println("Ingrese los lugares donde pararse");
                         int parar=sc.nextInt();
-                        transporte.add(new buses())
+                        transporte.add(new buses(asientos,parar,placa,color,(persona.get(index))));
                     } else if (m.menuTransporte()==2){
-                        System.out.println("Ingrese los asientos");
-                        int asientos=sc.nextInt();
-                    } else if (m.menuTransporte()==3){
                         int asientos=4;
                         System.out.println("Ingrese el numero del taxi");
                         int numero=sc.nextInt();
-                    } else {
+                        transporte.add(new taxis(asientos,numero,placa,color,(persona.get(index))));
+                        
+                    } else if (m.menuTransporte()==3){
                         int asientos=2;
+                        transporte.add(new mototaxis(asientos,placa,color,(persona.get(index))));
+                    } else {
+                        System.out.println("Ingrese los asientos");
+                        int asientos=sc.nextInt();
+                        transporte.add(new rapiditos(asientos,placa,color,(persona.get(index))));
                     }
                         
                 }
@@ -350,6 +358,56 @@ public class main {
                     
                     
                     
+                }
+                case 8:{
+                    String acum = "";
+                    for(Object temp : clase){
+                        if(temp instanceof clases){
+                            acum += ""+clase.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    System.out.println(acum);
+                }
+                case 9:{
+                    String acum = "";
+                    for(Object temp : estacione){
+                        if(temp instanceof estaciones){
+                            acum += ""+estacione.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    System.out.println(acum);
+                }
+                case 10:{
+                    String acum = "";
+                    for(Object temp : persona){
+                        if(temp instanceof alumnos){
+                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    System.out.println(acum);
+                }
+                case 11:{
+                    String acum = "";
+                    for(Object temp : persona){
+                        if(temp instanceof transportista){
+                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    System.out.println(acum);
+                }
+                case 12:{
+                    String acum = "";
+                    for(Object temp : transporte){
+                        if(temp instanceof transportes){
+                            acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                        }
+                        
+                    }
+                    System.out.println(acum);
                 }
                 
                 default:{

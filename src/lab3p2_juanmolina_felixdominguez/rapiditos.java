@@ -18,6 +18,17 @@ public class rapiditos extends transportes{
 
     public rapiditos() {
     }
+    
+    public rapiditos(int asientos, int placa, Color color, transportista transportista) {
+        super(placa,color,transportista);
+        this.asientos = asientos;
+    }
+    
+    public rapiditos(int asientos, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista) {
+        super(placa,color,transportista);
+        this.asientos = asientos;
+        this.alumnos = alumnos;
+    }
 
     public rapiditos(int asientos, ArrayList<alumnos> alumnos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones) {
         super(placa,color,transportista,estaciones);

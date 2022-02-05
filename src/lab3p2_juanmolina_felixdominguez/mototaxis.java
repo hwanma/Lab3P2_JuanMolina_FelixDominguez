@@ -19,6 +19,17 @@ public class mototaxis extends transportes{
 
     public mototaxis() {
     }
+    
+    public mototaxis(int asientos, int placa, Color color, transportista transportista){
+        super(placa,color,transportista);
+        this.asientos=asientos;
+    }
+    
+    public mototaxis(ArrayList<alumnos> alumnos,int asientos, int placa, Color color, transportista transportista){
+        super(placa,color,transportista);
+        this.alumnos = alumnos;
+        this.asientos=asientos;
+    }
 
     public mototaxis(ArrayList<alumnos> alumnos,int asientos, int placa, Color color, transportista transportista, ArrayList<estaciones> estaciones){
         super(placa,color,transportista,estaciones);
