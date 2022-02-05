@@ -198,166 +198,164 @@ public class main {
                         int asientos=sc.nextInt();
                         transporte.add(new rapiditos(asientos,placa,color,(persona.get(index))));
                     }
+                    break;
                         
                 }
                 
                 case 7:{
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    System.out.println("Transportes disponibles: ");
+                    String acum = "";
+                    for(Object temp : transporte){
+                        if(temp instanceof transportes){
+                            acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                        }
+                    }
+
+                    System.out.println(acum);
+
+                    System.out.println("Seleccione el transporte: ");
+                    int opcionTransporte = sc.nextInt();
+
+                    char resp2 = 'z';
+                    while (resp == 'z') {
+                        switch (m.menuSimulacion()) {
+                            case 0: {
+                                System.out.println("Gracias por utilizar este programa!");
+                                resp = 'x';
+                                break;
+                            }
+                            case 1: {
+                                System.out.println("Estudiantes: ");
+                                acum = "";
+                                for(Object temp : persona){
+                                    if(temp instanceof alumnos){
+                                        acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+
+                                System.out.println("Seleccione al Alumno: ");
+                                int opcionAlumno = sc.nextInt();
+                                
+                                ArrayList<alumnos> temp =new ArrayList<>();
+                                temp.add((alumnos)persona.get(opcionAlumno));
+                                ((transportes)transporte.get(opcionTransporte)).setAlumnos(temp);
+                                break;
+                                
+                            }
+                            case 2: {
+                                System.out.println("Estudiantes: ");
+                                acum = "";
+                                for(Object temp : transporte){
+                                    if(temp instanceof alumnos){
+                                        acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+
+                                System.out.println("Seleccione al Alumno: ");
+                                int opcionAlumno = sc.nextInt();
+                                
+                                ((transportes)transporte.get(opcionTransporte)).getAlumnos().remove(opcionAlumno);
+                                break;
+                            }
+                            case 3: {
+                                System.out.println("Estudiantes: ");
+                                acum = "";
+                                for(Object temp : transporte){
+                                    if(temp instanceof alumnos){
+                                        acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+                                break;
+                            }
+                            case 4: {
+                                System.out.println("Transportista: ");
+                                acum = "";
+                                for(Object temp : persona){
+                                    if(temp instanceof transportista){
+                                        acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+                                
+                                System.out.println("Seleccione al Transportista: ");
+                                int opcionTranspor = sc.nextInt();
+                                
+                                transportista temp = ((transportista)persona.get(opcionTranspor));
+                                ((transportes)transporte.get(opcionTransporte)).setTransportista(temp);
+                                break;
+                            }
+                            case 5: {
+                                System.out.println("Transportista: ");
+                                acum = "";
+                                for(Object temp : transporte){
+                                    if(temp instanceof transportista){
+                                        acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+                                
+                                System.out.println("Seleccione al Transportista: ");
+                                int opcionTranspor = sc.nextInt();
+                                
+                                ((transportes)transporte.get(opcionTransporte)).setTransportista(null);
+                                break;
+                            }
+                            case 6: {
+                                System.out.println("Estacion: ");
+                                acum = "";
+                                for(Object temp : estacione){
+                                    if(temp instanceof estaciones){
+                                        acum += ""+estacione.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+                                
+                                System.out.println("Seleccione la Estacion: ");
+                                int opcionEstacion = sc.nextInt();
+                                
+                                ArrayList<estaciones> temp =new ArrayList<>();
+                                temp.add((estaciones)estacione.get(opcionEstacion));
+                                ((transportes)transporte.get(opcionTransporte)).setEstaciones(temp);
+                                break;
+                            }
+                            case 7: {
+                                System.out.println("Estacion: ");
+                                acum = "";
+                                for(Object temp : transporte){
+                                    if(temp instanceof estaciones){
+                                        acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
+                                
+                                System.out.println("Seleccione la Estacion: ");
+                                int opcionEstacion = sc.nextInt();
+                                
+                                ArrayList<estaciones> temp =new ArrayList<>();
+                                temp.add((estaciones)estacione.get(opcionEstacion));
+                                ((transportes)transporte.get(opcionTransporte)).setEstaciones(temp);
+                                break;
+                            }
+                            case 8: {
+
+                            }
+                            case 9: {
+
+                            }
+                            default:{
+                                System.out.println("!!");
+                                System.out.println("Error, por favor introduzca un valor del menu.");
+                                System.out.println("!!");
+                                System.out.println(" ");
+                                break;
+                            }
+                        }
+                    }
+                    break;
                 }
                 case 8:{
                     String acum = "";
@@ -368,6 +366,7 @@ public class main {
                         
                     }
                     System.out.println(acum);
+                    break;
                 }
                 case 9:{
                     String acum = "";
@@ -378,6 +377,7 @@ public class main {
                         
                     }
                     System.out.println(acum);
+                    break;
                 }
                 case 10:{
                     String acum = "";
@@ -388,6 +388,7 @@ public class main {
                         
                     }
                     System.out.println(acum);
+                    break;
                 }
                 case 11:{
                     String acum = "";
@@ -398,6 +399,7 @@ public class main {
                         
                     }
                     System.out.println(acum);
+                    break;
                 }
                 case 12:{
                     String acum = "";
@@ -408,6 +410,7 @@ public class main {
                         
                     }
                     System.out.println(acum);
+                    break;
                 }
                 
                 default:{
@@ -419,389 +422,6 @@ public class main {
                 }
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+

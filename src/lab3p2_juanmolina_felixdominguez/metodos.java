@@ -48,79 +48,7 @@ public class metodos {
                             "Ingrese la opcion: ");
         return sc.nextInt();
     }
-    
-    public void simulacion(){
-        
-        System.out.println("Transportes disponibles: ");
-        String acum = "";
-        for(Object temp : transporte){
-            if(temp instanceof transportes){
-                acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
-            }
-        }
-        
-        System.out.println(acum);
-
-        System.out.println("Seleccione el transporte: ");
-        int opcionTransporte = sc.nextInt();
-        
-        char resp = 's';
-        while (resp == 's' || resp == 'S') {
-            switch (menuSimulacion()) {
-                case 0: {
-                    System.out.println("Gracias por utilizar este programa!");
-                    resp = 'n';
-                    break;
-                }
-                case 1: {
-                    System.out.println("Estudiantes: ");
-                    acum = "";
-                    for(Object temp : persona){
-                        if(temp instanceof alumnos){
-                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
-                        }
-                    }
-                    System.out.println(acum);
-                    
-                    System.out.println("Seleccione al Alumno: ");
-                    int opcionAlumno = sc.nextInt();
-                    
-                    if(transportes)
-                }
-                case 2: {
-
-                }
-                case 3: {
-
-                }
-                case 4: {
-
-                }
-                case 5: {
-
-                }
-                case 6: {
-
-                }
-                case 7: {
-
-                }
-                case 8: {
-
-                }
-                case 9: {
-
-                }
-                default:{
-                    System.out.println("!!");
-                    System.out.println("Error, por favor introduzca un valor del menu.");
-                    System.out.println("!!");
-                    System.out.println(" ");
-                    break;
-                }
-            }
-        }
-    }
+   
     
     public int menuTransporte(){
         System.out.println("1. Bus\n" +
@@ -171,19 +99,6 @@ public class metodos {
             }
         }
         
-        return estado;
-    }
-    
-    public boolean valid4(int x, int z, ArrayList<transportes> y){
-        boolean estado = false;
-        
-        for(int i=0;i<y.size();i++){
-            if(x==((transportes)y.get(i)).getIdEstudiantes()){
-                System.out.println("Este id ya existe!");
-                estado = true;
-                break;
-            }
-        }
         return estado;
     }
 }
