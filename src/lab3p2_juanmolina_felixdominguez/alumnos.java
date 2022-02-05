@@ -48,6 +48,10 @@ public class alumnos extends Personas{
     public void setClases(ArrayList<clases> clases) {
         this.clases = clases;
     }
+    
+    public void setClase(clases clase){
+        this.clases.add(clase);
+    }
 
     @Override
     public String toString() {

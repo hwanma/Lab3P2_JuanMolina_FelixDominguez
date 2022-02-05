@@ -125,9 +125,16 @@ public class main {
                     System.out.println("Seleccione al Alumno: ");
                     int opcionAlumno = sc.nextInt();
                     
-                    ArrayList<clases> temp =new ArrayList<>();
-                    temp.add(clase.get(opcionClase));
-                    ((alumnos)persona.get(opcionAlumno)).setClases(temp);
+                    ((alumnos)persona.get(opcionAlumno)).getClases().add(clase.get(opcionClase));
+                    
+                    System.out.println("Estudiantes: ");
+                    acum = "";
+                    for(Object temp : persona){
+                        if(temp instanceof alumnos){
+                            acum += ""+persona.indexOf(temp)+" - "+temp+"\n";
+                        }
+                    }
+                    System.out.println(acum);
                     
                     break;
                 }
@@ -340,7 +347,14 @@ public class main {
                                 break;
                             }
                             case 8: {
-
+                                System.out.println("Estacion: ");
+                                acum = "";
+                                for(Object temp : transporte){
+                                    if(temp instanceof transportes){
+                                        acum += ""+transporte.indexOf(temp)+" - "+temp+"\n";
+                                    }
+                                }
+                                System.out.println(acum);
                             }
                             case 9: {
 
